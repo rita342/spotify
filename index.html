@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,400;1,500&display=swap" rel="stylesheet" />
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+</head>
+<style>
+    * {
+        padding: 0px;
+        margin: 0px;
+    }
+    
+    body {
+        background: black;
+    }
+    
+    #box {
+        display: grid;
+        grid-template-columns: 20% 80%;
+        width: 100%;
+    }
+    
+    #sidebar {
+        background: black;
+        justify-content: start;
+        scrollbar-width: normal;
+        scrollbar-color: rgb(123, 123, 155);
+    }
+    
+    #sidebar::-webkit-scrollbar-thumb {
+        background-color: rgb(49, 235, 33);
+    }
+    
+    #sidebar::-webkit-scrollbar-track {
+        background-color: rgb(175, 185, 178);
+    }
+    
+    #sidebar::-webkit-scrollbar {
+        width: 5px;
+    }
+    
+    #sidebar>div {
+        color: white;
+        padding-left: 2em;
+        padding-top: 3em;
+    }
+    
+    #middle-container {
+        background: #141313;
+    }
+    
+    #sidebar span {
+        padding: 5px;
+    }
+    
+    #sidebar span a {
+        text-decoration: none;
+        color: rgb(187, 178, 178);
+    }
+    
+    #sidebar span :hover {
+        color: white;
+    }
+    
+    #logo img {
+        height: 40px;
+        vertical-align: middle;
+        transition: 0.4s ease;
+    }
+    
+    #logo img:hover {
+        transform: scale(1.36);
+        -webkit-transform: scale(1.36);
+        -ms-transform: scale(1.36);
+    }
+    
+    #logo #spotify {
+        padding-left: 5px;
+        font-size: 25px;
+        color: white
+    }
+    /* middle box style */
+    
+    #nav-bar {
+        display: grid;
+        grid-template-columns: 20% 16% 16% 16% 16% 16%;
+        justify-content: center;
+        background-color: black;
+        height: 70px;
+    }
+    
+    #nav-bar>div {
+        margin-top: 15px;
+        margin-left: 5px;
+    }
+    
+    #nav-bar:first-child i {
+        padding: 10px;
+        color: white;
+    }
+    
+    #nav-bar:first-child button {
+        border-radius: 30px;
+        background-color: black;
+    }
+    
+    #nav-bar:first-child button:hover {
+        background-color: rgb(95, 95, 88);
+    }
+    
+    #nav-bar span a {
+        color: rgb(182, 172, 172);
+        text-decoration: none;
+        font-size: 20px;
+        transition: 0.4s ease;
+    }
+    
+    #nav-bar span a:hover,
+    #nav-bar span a:active {
+        color: white;
+        font-size: 150%;
+        transform: scale(1.06);
+        -webkit-transform: scale(1.06);
+        -ms-transform: scale(1.06);
+    }
+    
+    #nav-bar #btn {
+        background: white;
+        padding: 15px;
+        width: 90px;
+        border: none;
+        font-size: 15px;
+        transition: 0.4s ease;
+    }
+    
+    #nav-bar #btn:hover,
+    #nav-bar #btn :active {
+        width: 120px;
+        font-size: 15px;
+        transform: scale(1.06);
+        -webkit-transform: scale(1.06);
+        -ms-transform: scale(1.06);
+        transition: 0.4s ease;
+    }
+    
+    .row {
+        margin-top: 4em;
+        margin-left: 2em;
+        transition: 0.4s ease;
+        color: white;
+        -webkit-box-shadow: 0 1px 4px rgba(77, 71, 71, 0.3), 0 0 40px rgba(70, 65, 65, 0.1) inset;
+        -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    }
+    
+    .card {
+        width: 170px;
+        margin-bottom: 20px;
+        color: white;
+        background: rgb(23, 23, 23);
+        font-size: 14px;
+        padding: 20px;
+    }
+    
+    .card-container {
+        position: relative;
+    }
+    
+    #play-button {
+        position: absolute;
+        color: rgb(4, 157, 4);
+        top: 40%;
+        font-size: 45px;
+        left: 60%;
+        border-radius: 50px;
+        display: none;
+        background: radial-gradient( circle, rgba(255, 255, 255, 1) 50%, rgb(31, 32, 31) 40%);
+        border-radius: 50%;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    }
+    
+    .row :hover+#play-button {
+        display: block;
+    }
+    
+    .row :hover {
+        background: rgb(32, 32, 32);
+        -webkit-transform: scale(1.06);
+        -ms-transform: scale(1.06);
+        transition: 0.4s ease;
+    }
+</style>
+
+<body>
+
+    <div id="box">
+        <div id="sidebar" style="overflow-y: scroll; height:600px;">
+            <div id="logo">
+                <span><img src="img/spotify (2).png" alt=""></span><span id="spotify">Spotify</span>
+            </div>
+            <div><span> <i class="fas fa-home"></i></span><span><a href="http://">Home</a></span></div>
+            <div><span><i class="fas fa-microphone-alt"></i></span><span><a href="http://">Artist</a></span></div>
+            <div><span> <i class="fas fa-search"></i></span><span><a href="http://">Search</a></span></div>
+            <div><span> <i class="fas fa-stream"></i> </span><span><a href="http://">Your Library</a></span></div>
+            <div><span> <i class="far fa-plus-square mr-1"></i></span><span><a href="http://">Create playist</a></span> </div>
+            <div><span>  <img src="https://misc.scdn.co/liked-songs/liked-songs-300.png" class="likedSong mr-1" alt="liked song icon" style="width:35px;vertical-align:middle"></span><span><a href="http://"></a>Liked song</span></div>
+            <div><span><a href="http://">Funky Heavy Bluesy</a></span> </div>
+            <div><span><a href="http://">Your Top Songs 2020 </a></span> </div>
+            <div><span><a href="http://">In Love With you - Erykah </a></span></div>
+            <div> <span><a href="http://">This is Post Malone </a></span></div>
+            <div> <span><a href="http://">This is Imagine Dragons </a></span></div>
+            <div> <span><a href="http://">This is Avicii</a></span></div>
+            <div><span><a href="http://">New Playlist</a></span></div>
+            <div><span>    <i class="fas fa-arrow-circle-down"></i></span><a href="http://">INSTALL APP</a><span></span></div>
+        </div>
+        <div id="middle-container">
+            <div id="nav-bar">
+                <div><button><i class="fas fa-chevron-left"></i></button>
+                    <button><i class="fas fa-chevron-right"></i></button></div>
+                <div><span><a href="http://">Premium</a>  </span></div>
+                <div><span><a href="http://">Support</a></span></div>
+                <div><span><a href="http://">Download</a></span></div>
+
+                <div><span style="font-weight:900px"><a href="#">Sign up</a>
+                   </div>
+                <div> <button id="btn" style="font-weight:900px">
+                    Login
+                </button></div>
+            </div>
+            <h4 style="color:white;margin-left: 10px;margin-top: 10px;">See All</h4>
+            
+            <div id="card-container">
+
+
+                <div class="row" style="display:grid;  grid-template-columns: repeat(4, 1fr); grid-gap: 1em;">
+
+
+
+
+
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+    <footer style="background:black">
+
+    </footer>
+</body>
+<script>
+    window.onload = (query, song) => {
+        fetch("https://deezerdevs-deezer.p.rapidapi.com/search?q=" + query, {
+                "method": "GET",
+                "headers": {
+                    "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
+                    "x-rapidapi-key": "45ea72d0cbmsh5a68a7ddaa76fefp17c953jsn0a280e030350"
+                },
+
+
+            })
+            .then(response => response.json())
+            .then(data => {
+
+                console.log(data)
+                let song = data.data
+
+
+                for (let i = 0; i < song.length; i++) {
+                    const row = document.querySelector('.row')
+                    let obj = song[i]
+
+
+                    row.innerHTML +=
+
+                        ` <div class="card"><img src="${obj.artist.picture}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                              <h6 class="card-title">${obj.artist.name}</h6>
+                              
+                            </div>
+                            <h6 id="play-button"><i class="fas fa-play-circle playHover"></i></h6>
+                           </div>`
+
+
+                }
+
+
+            });
+
+    }
+</script>
+
+</html>
