@@ -202,7 +202,6 @@
 </style>
 
 <body>
-
     <div id="box">
         <div id="sidebar" style="overflow-y: scroll; height:600px;">
             <div id="logo">
@@ -240,35 +239,25 @@
             <h4 style="color:white;margin-left: 10px;margin-top: 10px;">See All</h4>
             
             <div id="card-container">
-
-
                 <div class="row" style="display:grid;  grid-template-columns: repeat(4, 1fr); grid-gap: 1em;">
-
-
-
-
-
                 </div>
-
             </div>
-
-
         </div>
     </div>
     <footer style="background:black">
-
+      
+	
+   
     </footer>
 </body>
 <script>
-    window.onload = (query, song) => {
+    function deezer(query, song) {
         fetch("https://deezerdevs-deezer.p.rapidapi.com/search?q=" + query, {
                 "method": "GET",
                 "headers": {
                     "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
                     "x-rapidapi-key": "45ea72d0cbmsh5a68a7ddaa76fefp17c953jsn0a280e030350"
                 },
-
-
             })
             .then(response => response.json())
             .then(data => {
@@ -276,28 +265,25 @@
                 console.log(data)
                 let song = data.data
 
-
                 for (let i = 0; i < song.length; i++) {
                     const row = document.querySelector('.row')
                     let obj = song[i]
-
-
                     row.innerHTML +=
 
-                        ` <div class="card"><img src="${obj.artist.picture}" class="card-img-top" alt="...">
+                        ` <div class="card"><img src="${obj.album.cover}" class="card-img-top" alt="...">
                             <div class="card-body">
-                              <h6 class="card-title">${obj.artist.name}</h6>
+                              <h6 class="card-title">${obj.album.title}</h6>
                               
                             </div>
                             <h6 id="play-button"><i class="fas fa-play-circle playHover"></i></h6>
                            </div>`
-
-
                 }
-
-
             });
-
+    }
+    window.onload = function(query) {
+        deezer("Pink Floyd")
+        deezer("Eric Clapton")
+        deezer("Jimi Hendrix")
     }
 </script>
 
