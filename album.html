@@ -34,15 +34,15 @@
         background: black;
         justify-content: start;
         scrollbar-width: normal;
-        scrollbar-color: rgb(123, 123, 155);
+        scrollbar-color: rgb(123, 155, 125);
     }
     
     #sidebar::-webkit-scrollbar-thumb {
-        background-color: rgb(49, 235, 33);
+        background-color: rgb(22, 136, 12);
     }
     
     #sidebar::-webkit-scrollbar-track {
-        background-color: rgb(175, 185, 178);
+        background-color: rgb(11, 239, 79);
     }
     
     #sidebar::-webkit-scrollbar {
@@ -69,7 +69,7 @@
     }
     
     #sidebar span :hover {
-        color: white;
+        color: rgb(255, 255, 255);
     }
     
     #logo img {
@@ -207,7 +207,7 @@
             <div id="logo">
                 <span><img src="img/spotify (2).png" alt=""></span><span id="spotify">Spotify</span>
             </div>
-            <div><span> <i class="fas fa-home"></i></span><span><a href="http://">Home</a></span></div>
+            <div><span> <i class="fas fa-home"></i></span><span><a href="home.html">Home</a></span></div>
             <div><span><i class="fas fa-microphone-alt"></i></span><span><a href="http://">Artist</a></span></div>
             <div><span> <i class="fas fa-search"></i></span><span><a href="http://">Search</a></span></div>
             <div><span> <i class="fas fa-stream"></i> </span><span><a href="http://">Your Library</a></span></div>
@@ -259,7 +259,7 @@
                     "x-rapidapi-key": "45ea72d0cbmsh5a68a7ddaa76fefp17c953jsn0a280e030350"
                 },
             })
-            .then(response => response.json())
+             .then((response) => response.json())
             .then(data => {
 
                 console.log(data)
@@ -270,13 +270,13 @@
                     let obj = song[i]
                     row.innerHTML +=
 
-                        ` <div class="card"><img src="${obj.album.cover}" class="card-img-top" alt="...">
+                        ` <div class="card"> <img src="${obj.album.cover}" class="card-img-top" alt="...">
                             <div class="card-body">
-                              <h6 class="card-title">${obj.album.title}</h6>
-                              
+                              <p class="card-title" style="font-size:14px"><a href="./home.html?albumId=${obj.album.id}">${obj.album.title}</a></hp>
+                                 <h6 class="card-title" style="font-size:10px">${obj.album.id}</h6> 
                             </div>
-                            <h6 id="play-button"><i class="fas fa-play-circle playHover"></i></h6>
-                           </div>`
+                           <h6 id="play-button"><i class="fas fa-play-circle playHover"></i></h6>
+                        </div> `
                 }
             });
     }
@@ -284,7 +284,7 @@
         deezer("Pink Floyd")
         deezer("Eric Clapton")
         deezer("Jimi Hendrix")
-    }
+    } 
 </script>
 
 </html>

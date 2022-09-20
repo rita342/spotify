@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        padding: 0px;
+        margin: 0px;
+    }
+    
+    body {
+        background: linear-gradient(to bottom right, #990e6b, rgb(55, 28, 48));
+    }
+    
+    #box {
+        display: grid;
+        grid-template-columns: 20% 80%;
+        width: 100%;
+    }
+    
+    #sidebar {
+        background: black;
+        justify-content: start;
+        scrollbar-width: normal;
+        scrollbar-color: rgb(123, 155, 125);
+    }
+    
+    #sidebar::-webkit-scrollbar-thumb {
+        background-color: rgb(22, 136, 12);
+    }
+    
+    #sidebar::-webkit-scrollbar-track {
+        background-color: rgb(11, 239, 79);
+    }
+    
+    #sidebar::-webkit-scrollbar {
+        width: 5px;
+    }
+    
+    #sidebar>div {
+        color: white;
+        padding-left: 2em;
+        padding-top: 3em;
+    }
+    
+    #middle-container {
+        background: linear-gradient(to bottom right, #990e6b, rgb(55, 28, 48));
+    }
+    
+    #sidebar span {
+        padding: 5px;
+    }
+    
+    #sidebar span a {
+        text-decoration: none;
+        color: rgb(187, 178, 178);
+    }
+    
+    #sidebar span :hover {
+        color: rgb(255, 255, 255);
+    }
+    
+    #logo img {
+        height: 40px;
+        vertical-align: middle;
+        transition: 0.4s ease;
+    }
+    
+    #logo img:hover {
+        transform: scale(1.36);
+        -webkit-transform: scale(1.36);
+        -ms-transform: scale(1.36);
+    }
+    
+    #logo #spotify {
+        padding-left: 5px;
+        font-size: 25px;
+        color: white
+    }
+    /* middle box style */
+    
+    #nav-bar {
+        display: grid;
+        grid-template-columns: 20% 16% 16% 16% 16% 16%;
+        justify-content: center;
+        background: linear-gradient(to bottom right, #990e6b, rgb(55, 28, 48));
+        height: 70px;
+    }
+    
+    #nav-bar>div {
+        margin-top: 15px;
+        margin-left: 5px;
+    }
+    
+    #nav-bar:first-child i {
+        padding: 10px;
+        color: white;
+    }
+    
+    #nav-bar:first-child button {
+        border-radius: 30px;
+        background-color: black;
+    }
+    
+    #nav-bar:first-child button:hover {
+        background-color: rgb(95, 95, 88);
+    }
+    
+    #nav-bar span a {
+        color: rgb(182, 172, 172);
+        text-decoration: none;
+        font-size: 20px;
+        transition: 0.4s ease;
+    }
+    
+    #nav-bar span a:hover,
+    #nav-bar span a:active {
+        color: white;
+        font-size: 150%;
+        transform: scale(1.06);
+        -webkit-transform: scale(1.06);
+        -ms-transform: scale(1.06);
+    }
+    
+    #nav-bar #btn {
+        background: white;
+        padding: 15px;
+        width: 90px;
+        border: none;
+        font-size: 15px;
+        transition: 0.4s ease;
+    }
+    
+    #nav-bar #btn:hover,
+    #nav-bar #btn :active {
+        width: 120px;
+        font-size: 15px;
+        transform: scale(1.06);
+        -webkit-transform: scale(1.06);
+        -ms-transform: scale(1.06);
+        transition: 0.4s ease;
+    }
+    
+    .row {
+        margin-top: 4em;
+        margin-left: 2em;
+        transition: 0.4s ease;
+        border: none;
+        color: white;
+    }
+</style>
+
+<body>
+    <div id="box">
+        <div id="sidebar" style="overflow-y: scroll; height:600px;">
+            <div id="logo">
+                <span><img src="img/spotify (2).png" alt=""></span><span id="spotify">Spotify</span>
+            </div>
+            <div><span> <i class="fas fa-home"></i></span><span><a href="http://">Home</a></span></div>
+            <div><span><i class="fas fa-microphone-alt"></i></span><span><a href="http://">Artist</a></span></div>
+            <div><span> <i class="fas fa-search"></i></span><span><a href="http://">Search</a></span></div>
+            <div><span> <i class="fas fa-stream"></i> </span><span><a href="http://">Your Library</a></span></div>
+            <div><span> <i class="far fa-plus-square mr-1"></i></span><span><a href="http://">Create playist</a></span> </div>
+            <div><span>  <img src="https://misc.scdn.co/liked-songs/liked-songs-300.png" class="likedSong mr-1" alt="liked song icon" style="width:35px;vertical-align:middle"></span><span><a href="http://"></a>Liked song</span></div>
+            <div><span><a href="http://">Funky Heavy Bluesy</a></span> </div>
+            <div><span><a href="http://">Your Top Songs 2020 </a></span> </div>
+            <div><span><a href="http://">In Love With you - Erykah </a></span></div>
+            <div> <span><a href="http://">This is Post Malone </a></span></div>
+            <div> <span><a href="http://">This is Imagine Dragons </a></span></div>
+            <div> <span><a href="http://">This is Avicii</a></span></div>
+            <div><span><a href="http://">New Playlist</a></span></div>
+            <div><span>    <i class="fas fa-arrow-circle-down"></i></span><a href="http://">INSTALL APP</a><span></span></div>
+        </div>
+        <div id="middle-container">
+            <div id="nav-bar">
+                <div><button><i class="fas fa-chevron-left"></i></button>
+                    <button><i class="fas fa-chevron-right"></i></button></div>
+                <div><span><a href="http://">Premium</a>  </span></div>
+                <div><span><a href="http://">Support</a></span></div>
+                <div><span><a href="http://">Download</a></span></div>
+
+                <div><span style="font-weight:900px"><a href="#">Sign up</a>
+                   </div>
+                <div> <button id="btn" style="font-weight:900px">
+                    Login
+                </button></div>
+            </div>
+            <h4 style="color:white;margin-left: 10px;margin-top: 10px;">See All</h4>
+            <div id="container">
+                <div class="row" style="display:flex">
+
+                </div>
+            </div>
+          
+        </div>
+    </div>
+    <footer style="background:black">
+      
+	
+   
+    </footer>
+</body>
+<script>
+    window.onload = function(){
+        const row = document.querySelector('.row')
+        const query= new URLSearchParams(document.location.search).get('albumId')
+        console.log(query)
+
+        fetch("https://striveschool-api.herokuapp.com/api/deezer/album/"+query, {
+                "method": "GET",
+                "headers": {
+                    "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
+                    "x-rapidapi-key": "45ea72d0cbmsh5a68a7ddaa76fefp17c953jsn0a280e030350"
+                },
+            })
+            .then((response)=>response.json())
+            .then((data)=>{
+                row.innerHTML= `<div class="col">
+                     <img src="${data.cover_medium}">
+                     
+                   </div>
+                   
+                    <div class="col" style="margin:10rem 0rem 0rem 3rem;">
+                        <h5>Album<h5>
+                    <h1 class="card-title" style="font-size:30px">${data.title}</h1>
+                    <h1 class="card-title" style="font-size:10px">release date:${data.release_date}</h1>  
+                     </div>
+                   ` 
+            })
+    }
+</script>
+</html>
